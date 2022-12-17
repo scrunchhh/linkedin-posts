@@ -1,0 +1,143 @@
+body{
+    background: #16161d;
+    height: 97vh;
+    color: white;
+    margin: 50px;
+    font-family: 'Hind Siliguri', sans-serif;
+    font-weight: 700;
+}
+
+.time {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+}
+
+.vs {
+    font-size: 30px;
+    line-height: 10px;
+}
+
+.teams {
+    display: flex;
+    justify-content: space-around;
+    font-size: 40px;
+    gap: 200px;
+
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.france,
+.argentina {
+    position: relative;
+    height: 200px;
+}
+
+
+.france .left,
+.france .center, 
+.france .right,
+.argentina .left,
+.argentina .center,
+.argentina .right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+
+
+.france .left,
+.france .right,
+.argentina .left,
+.argentina .right {
+    width: 80px;
+}
+
+
+.argentina .right {
+    background: linear-gradient(
+        to bottom,
+        lightblue 0%, lightblue 33%,
+        white 0%, white 66%,
+        lightblue 0%, lightblue 100%
+    );
+    right: 0px;
+    border-radius: 0 20px 20px 0;
+}
+
+.argentina .left {
+    background: linear-gradient(
+        to bottom,
+        lightblue 0%, lightblue 33%,
+        white 0%, white 66%,
+        lightblue 0%, lightblue 100%
+    );
+    left: 0px;
+    border-radius: 20px 0 0 20px;
+    animation: left-animate 1s ease infinite alternate;
+}
+
+.argentina .center {
+    display: flex;
+    background: linear-gradient(
+        to bottom,
+        lightblue 0%, lightblue 33%,
+        white 0%, white 66%,
+        lightblue 0%, lightblue 100%
+    );
+    right: 78px;
+    width: 1px;
+    transform-origin: right;
+    animation: center-animate 1s ease infinite alternate;
+}
+
+.france .left {
+    background: blue;
+    left: 0px;
+    border-radius: 20px 0 0 20px;
+}
+.france .right {
+    background: red;
+    border-radius: 0 20px 20px 0;
+    animation: right-animate 1s ease infinite alternate;
+}
+.france .center {
+    background: white;
+    left: 80px;
+    width: 1px;
+    transform-origin: left;
+    animation: center-animate 1s ease infinite alternate;
+}
+
+@keyframes right-animate {
+    0% {
+        transform: translateX(300px);
+    }
+    100% {
+        transform: translateX(160px);
+    }
+}
+
+@keyframes left-animate {
+    0% {
+        transform: translateX(-380px);
+    }
+    100% {
+        transform: translateX(-236px);
+    }
+}
+
+@keyframes center-animate {
+    0% {
+        transform: scaleX(240);
+    }
+    100% {
+        transform: scaleX(80);
+    }
+}
